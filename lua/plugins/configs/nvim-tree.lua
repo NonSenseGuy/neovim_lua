@@ -6,3 +6,12 @@ g.nvim_tree_auto_open = 1
 g.nvim_tree_git_hl = 1
 g.nvim_tree_ignore = { ".cache", ".git", "node_modules"}
 g.nvim_tree_follow = 1
+
+require('nvim_tree').setup{
+  update_focused_file = {
+    enable = false
+  }
+
+  open_on_setup = true
+  lsp_diagnostics = true
+}

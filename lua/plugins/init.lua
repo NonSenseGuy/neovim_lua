@@ -40,12 +40,21 @@ return packer.startup(
         require "plugins.configs.lspconfig"
       end
     }
+
+    use {
+      "ray-x/lsp_signature.nvim",
+      config = function()
+        require "lsp_signature".setup()
+      end
+    }
+
     use { 
       "hrsh7th/nvim-cmp",
       requires = {
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-nvim-lsp",
         "onsails/lspkind-nvim",
+        "SirVer/ultisnips",
         "quangnguyen30192/cmp-nvim-ultisnips"
       },
       config = function()
@@ -54,7 +63,13 @@ return packer.startup(
     }
 
     -- go
-    use { "fatih/vim-go" }
+    -- use { "fatih/vim-go" }
+    use {
+      "ray-x/go.nvim" ,
+      config = function()
+        require "plugins.configs.go"
+      end
+    }
 
     -- terraform
     use { "hashivim/vim-terraform" }
@@ -74,11 +89,12 @@ return packer.startup(
     }
 
     -- tree file
-    use { "kyazdani42/nvim-web-devicons" }
+    -- use { "kyazdani42/nvim-web-devicons" }
     use {
       "kyazdani42/nvim-tree.lua",
+      requires= { "kyazdani42/nvim-web-devicons" },
       config = function()
-        require "plugins.configs.nvim-tree"
+        require'nvim-tree'.setup {}
       end
     }
 

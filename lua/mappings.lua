@@ -26,7 +26,7 @@ map("n", "<C-l>", ":nohl<CR>", opt)
 
 -- nvim-tree
 map("n", "<Leader>tt", ":NvimTreeToggle<CR>", opt)
-map("n", "<Leader>tf", ":NvimTreeRefresh<CR>", opt)
+map("n", "<Leader>tf", ":NvimTreeFindFile<CR>", opt)
 map("n", "<F6>", ":NvimTreeRefresh<CR>", opt)
 
 -- Telescope
@@ -36,7 +36,7 @@ map("n", "<Leader>fh", ":Telescope help_tags<CR>", opt)
 map("n", "<Leader>fb", ":Telescope buffers<CR>", opt)
 
 -- Ultisnips
-map("n", "<Leader>u", ":UltiSnipsEdit<CR>", opt)
+-- map("n", "<Leader>u", ":UltiSnipsEdit<CR>", opt)
 
 -- Consistent movement
 map("n", "gh", "^", opt)
@@ -45,8 +45,8 @@ map("v", "gh", "^", opt)
 map("v", "gl", "$", opt)
 
 -- Buffers
-map("n", "<Leader>l", ":bn<CR>", opt)
-map("n", "<Leader>h", ":bp<CR>", opt)
+map("n", "<Leader>bn", ":bn<CR>", opt)
+map("n", "<Leader>bp", ":bp<CR>", opt)
 map("n", "<Leader>d", ":bd<CR>", opt)
 map("n", "<Leader><Leader>", "<C-^>", opt)
 map("n", "<Leader>L", "<C-w>L",opt)

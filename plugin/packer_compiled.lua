@@ -82,14 +82,24 @@ _G.packer_plugins = {
     path = "/home/lexo/.local/share/nvim/site/pack/packer/start/cmp-nvim-ultisnips"
   },
   ["galaxyline.nvim"] = {
-    config = { "\27LJ\1\0029\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\30plugins.configs.nvim-tree\frequire\0" },
+    config = { "\27LJ\1\2:\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\31plugins.configs.statusline\frequire\0" },
     loaded = true,
     path = "/home/lexo/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
+  },
+  ["go.nvim"] = {
+    config = { "\27LJ\1\0022\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\23plugins.configs.go\frequire\0" },
+    loaded = true,
+    path = "/home/lexo/.local/share/nvim/site/pack/packer/start/go.nvim"
   },
   ["indent-blankline.nvim"] = {
     config = { "\27LJ\1\0029\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\30plugins.configs.blankline\frequire\0" },
     loaded = true,
     path = "/home/lexo/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
+  },
+  ["lsp_signature.nvim"] = {
+    config = { "\27LJ\1\2;\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\18lsp_signature\frequire\0" },
+    loaded = true,
+    path = "/home/lexo/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim"
   },
   ["lspkind-nvim"] = {
     loaded = true,
@@ -122,7 +132,7 @@ _G.packer_plugins = {
     path = "/home/lexo/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
   },
   ["nvim-tree.lua"] = {
-    config = { "\27LJ\1\0029\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\30plugins.configs.nvim-tree\frequire\0" },
+    config = { "\27LJ\1\2;\0\0\2\0\3\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0002\1\0\0>\0\2\1G\0\1\0\nsetup\14nvim-tree\frequire\0" },
     loaded = true,
     path = "/home/lexo/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
   },
@@ -160,6 +170,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/lexo/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
+  ultisnips = {
+    loaded = true,
+    path = "/home/lexo/.local/share/nvim/site/pack/packer/start/ultisnips"
+  },
   ["vim-commentary"] = {
     loaded = true,
     path = "/home/lexo/.local/share/nvim/site/pack/packer/start/vim-commentary"
@@ -167,10 +181,6 @@ _G.packer_plugins = {
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/lexo/.local/share/nvim/site/pack/packer/start/vim-fugitive"
-  },
-  ["vim-go"] = {
-    loaded = true,
-    path = "/home/lexo/.local/share/nvim/site/pack/packer/start/vim-go"
   },
   ["vim-surround"] = {
     loaded = true,
@@ -183,6 +193,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: lsp_signature.nvim
+time([[Config for lsp_signature.nvim]], true)
+try_loadstring("\27LJ\1\2;\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\18lsp_signature\frequire\0", "config", "lsp_signature.nvim")
+time([[Config for lsp_signature.nvim]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
 try_loadstring("\27LJ\1\2:\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\31plugins.configs.treesitter\frequire\0", "config", "nvim-treesitter")
@@ -193,24 +207,28 @@ try_loadstring("\27LJ\1\0023\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\24plugi
 time([[Config for nvim-cmp]], false)
 -- Config for: nvim-tree.lua
 time([[Config for nvim-tree.lua]], true)
-try_loadstring("\27LJ\1\0029\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\30plugins.configs.nvim-tree\frequire\0", "config", "nvim-tree.lua")
+try_loadstring("\27LJ\1\2;\0\0\2\0\3\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0002\1\0\0>\0\2\1G\0\1\0\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
 time([[Config for nvim-tree.lua]], false)
--- Config for: galaxyline.nvim
-time([[Config for galaxyline.nvim]], true)
-try_loadstring("\27LJ\1\0029\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\30plugins.configs.nvim-tree\frequire\0", "config", "galaxyline.nvim")
-time([[Config for galaxyline.nvim]], false)
 -- Config for: indent-blankline.nvim
 time([[Config for indent-blankline.nvim]], true)
 try_loadstring("\27LJ\1\0029\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\30plugins.configs.blankline\frequire\0", "config", "indent-blankline.nvim")
 time([[Config for indent-blankline.nvim]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-try_loadstring("\27LJ\1\0029\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\30plugins.configs.lspconfig\frequire\0", "config", "nvim-lspconfig")
-time([[Config for nvim-lspconfig]], false)
+-- Config for: go.nvim
+time([[Config for go.nvim]], true)
+try_loadstring("\27LJ\1\0022\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\23plugins.configs.go\frequire\0", "config", "go.nvim")
+time([[Config for go.nvim]], false)
+-- Config for: galaxyline.nvim
+time([[Config for galaxyline.nvim]], true)
+try_loadstring("\27LJ\1\2:\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\31plugins.configs.statusline\frequire\0", "config", "galaxyline.nvim")
+time([[Config for galaxyline.nvim]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 try_loadstring("\27LJ\1\0029\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\30plugins.configs.telescope\frequire\0", "config", "telescope.nvim")
 time([[Config for telescope.nvim]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+try_loadstring("\27LJ\1\0029\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\30plugins.configs.lspconfig\frequire\0", "config", "nvim-lspconfig")
+time([[Config for nvim-lspconfig]], false)
 if should_profile then save_profiles() end
 
 end)

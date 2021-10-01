@@ -28,16 +28,16 @@ local on_attach = function(client, bufnr)
 
   -- Set some keybinds conditional on server capabilities
   if client.resolved_capabilities.document_formatting then
-    buf_set_keymap("n", "ff", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+    buf_set_keymap("n", "<space>ff", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
   elseif client.resolved_capabilities.document_range_formatting then
-    buf_set_keymap("n", "ff", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+    buf_set_keymap("n", "<space>ff", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
   end
 end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 -- You have to install them npm install -g <<server-name>>
-local servers = {'pyright', 'bashls' }
+local servers = {'pyright', 'gopls','bashls' }
 for _, lang in ipairs(servers) do
   lsp[lang].setup {
     on_attach = on_attach,
@@ -48,21 +48,23 @@ for _, lang in ipairs(servers) do
   }
 end
 
-lsp.gopls.setup{
-  cmd = {'/home/lexo/go/bin/gopls', 'remote--auto'},
-  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
-  settings = {
-    gopls = {
-      experimentalPostfixCompletions = true,
-      analyses = {
-        unusedparams = true,
-        shadow = true,
-      },
-      staticcheck = true,
-    },
-  },
-  on_attach = on_attach,
-}
+local protocol = require'vim.lsp.protocol'
+
+-- lsp.gopls.setup{
+--   cmd = {'/home/lexo/go/bin/gopls', 'remote--auto'},
+--   capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+--   settings = {
+--     gopls = {
+--       experimentalPostfixCompletions = true,
+--       analyses = {
+--         unusedparams = true,
+--         shadow = true,
+--       },
+--       staticcheck = true,
+--     },
+--   },
+--   on_attach = on_attach,
+-- }
 
 function goimports(timeoutms)
   local context = { source = { organizeImports = true } }
