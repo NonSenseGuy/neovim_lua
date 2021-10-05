@@ -24,6 +24,7 @@ return packer.startup(
     use { 
       "nvim-treesitter/nvim-treesitter",
       requires = {
+        "nvim-treesitter/nvim-treesitter-textobjects",
         "windwp/nvim-ts-autotag",
         "windwp/nvim-autopairs",
       },

@@ -9,9 +9,10 @@ g.nvim_tree_follow = 1
 
 require('nvim_tree').setup{
   update_focused_file = {
-    enable = false
+    enable = true
   }
 
-  open_on_setup = true
+  open_on_setup = false
   lsp_diagnostics = true
+  auto_close = true
 }
