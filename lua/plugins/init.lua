@@ -67,6 +67,11 @@ return packer.startup(
     -- use { "fatih/vim-go" }
     use {
       "ray-x/go.nvim" ,
+      requires = {
+        "mfussenegger/nvim-dap",
+        "rcarriga/nvim-dap-ui",
+        "theHamsta/nvim-dap-virtual-text",
+      },
       config = function()
         require "plugins.configs.go"
       end
@@ -95,7 +100,7 @@ return packer.startup(
       "kyazdani42/nvim-tree.lua",
       requires= { "kyazdani42/nvim-web-devicons" },
       config = function()
-        require'nvim-tree'.setup {}
+        require "plugins.configs.nvim-tree"
       end
     }
 

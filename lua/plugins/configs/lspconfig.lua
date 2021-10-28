@@ -37,7 +37,7 @@ end
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 -- You have to install them npm install -g <<server-name>>
-local servers = {'pyright', 'gopls','bashls' }
+local servers = {'pyright', 'bashls' }
 for _, lang in ipairs(servers) do
   lsp[lang].setup {
     on_attach = on_attach,

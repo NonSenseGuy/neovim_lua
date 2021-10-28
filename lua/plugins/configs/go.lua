@@ -11,7 +11,19 @@ go.setup{
   lsp_gofumpt = true, -- true: set default gofmt in gopls format to gofumpt
   lsp_on_attach = true, -- use on_attach from go.nvim
   dap_debug = true,
+  dap_debug_keymap = true, -- set keymaps for debugger
+  dap_debug_gui = true, -- set to true to enable dap gui, highly recommand
+  dap_debug_vt = true, -- set to true to enable dap virtual text
 }
 
 local protocol = require'vim.lsp.protocol'
+
+
+-- Format on save
+vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').gofmt() ]], false)
+
+-- Import on save
+vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
+
+
 
