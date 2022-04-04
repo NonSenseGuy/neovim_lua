@@ -42,47 +42,24 @@ return packer.startup(
       end
     }
 
-    use {
-      "ray-x/lsp_signature.nvim",
-      config = function()
-        require "lsp_signature".setup()
-      end
-    }
-
     use { 
       "hrsh7th/nvim-cmp",
       requires = {
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-nvim-lsp",
+        "hrsh7th/cmp-path",
         "onsails/lspkind-nvim",
         "SirVer/ultisnips",
-        "quangnguyen30192/cmp-nvim-ultisnips"
+        "quangnguyen30192/cmp-nvim-ultisnips",
       },
       config = function()
         require "plugins.configs.cmp"
       end
     }
 
-    -- go
-    -- use { "fatih/vim-go" }
-    use {
-      "ray-x/go.nvim" ,
-      requires = {
-        "mfussenegger/nvim-dap",
-        "rcarriga/nvim-dap-ui",
-        "theHamsta/nvim-dap-virtual-text",
-      },
-      config = function()
-        require "plugins.configs.go"
-      end
-    }
-
-    -- terraform
     use { "hashivim/vim-terraform" }
 
     -- fuzzy finder
-    --use { "nvim-lua/popup.nvim" }
-    --use { "nvim-lua/plenary.nvim" }
     use {
       "nvim-telescope/telescope.nvim",
       requires = {
@@ -114,12 +91,27 @@ return packer.startup(
       end
     }
 
-    -- status line
+    use{
+      "jose-elias-alvarez/null-ls.nvim",
+      requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    }
+
     use {
-      "glepnir/galaxyline.nvim",
+      "j-hui/fidget.nvim",
       config = function()
-        require "plugins.configs.statusline"
+        require("fidget").setup{}
       end
     }
+    
+    use { "rcarriga/vim-ultest", requires = {"vim-test/vim-test"}, run = ":UpdateRemotePlugins" }
+
+    -- -- status line
+    -- use {
+    --   "glepnir/galaxyline.nvim",
+    --   config = function()
+    --     require "plugins.configs.statusline"
+    --   end
+    -- }
+
   end
 )

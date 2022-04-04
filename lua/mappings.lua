@@ -35,6 +35,11 @@ map("n", "<Leader>fg", ":Telescope live_grep<CR>", opt)
 map("n", "<Leader>fh", ":Telescope help_tags<CR>", opt)
 map("n", "<Leader>fb", ":Telescope buffers<CR>", opt)
 
+-- vim-tests
+
+map("n", "]t", "<Plug>(ultest-next-fail)")
+map("n", "[t", "<Plug>(ultest-prev-fail)")
+
 -- Ultisnips
 -- map("n", "<Leader>u", ":UltiSnipsEdit<CR>", opt)
 
@@ -61,6 +66,7 @@ map("n", "<C-n>", ":cnext<CR>", opt)
 map("n", "<Left>", ":cpfile<CR>", opt)
 map("n", "<Right>", ":cnfile<CR>", opt)
 map("n", "<leader>a", ":cclose<CR>", opt)
+map("n", "<leader>a", ":lcl<CR>", opt)
 map("n", "<leader>aa", ":ccopen<CR>", opt)
 
 -- Command 'TrimSpaces' well... it's self-explanatory what this those
